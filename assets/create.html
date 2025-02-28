@@ -1,0 +1,30 @@
+{% extends "admin/challenges/create.html" %}
+
+{% block header %}
+<div class="alert alert-secondary" role="alert">
+    Container challenges dynamically spin up a Docker container for each team to run the challenge on.
+</div>
+{% endblock %}
+
+{% block value %}
+<!-- ... (keep existing value blocks) ... -->
+
+<div class="form-group">
+    <label>
+        Port Range<br>
+        <small class="form-text text-muted">
+            Internal container ports that should be exposed (external ports will be automatically assigned)
+        </small>
+    </label>
+    <div class="row">
+        <div class="col">
+            <input type="number" class="form-control" name="port_range_start" placeholder="Start port" required>
+        </div>
+        <div class="col">
+            <input type="number" class="form-control" name="port_range_end" placeholder="End port" required>
+        </div>
+    </div>
+</div>
+
+<!-- ... (keep rest of the file unchanged) ... -->
+{% endblock %}

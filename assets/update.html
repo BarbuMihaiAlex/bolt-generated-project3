@@ -1,0 +1,24 @@
+{% extends "admin/challenges/update.html" %}
+
+{% block value %}
+<!-- ... (keep existing value blocks) ... -->
+
+<div class="form-group">
+    <label>
+        Port Range<br>
+        <small class="form-text text-muted">
+            Internal container ports that should be exposed (external ports will be automatically assigned)
+        </small>
+    </label>
+    <div class="row">
+        <div class="col">
+            <input type="number" class="form-control" name="port_range_start" value="{{ challenge.port_range_start }}" required>
+        </div>
+        <div class="col">
+            <input type="number" class="form-control" name="port_range_end" value="{{ challenge.port_range_end }}" required>
+        </div>
+    </div>
+</div>
+
+<!-- ... (keep rest of the file unchanged) ... -->
+{% endblock %}
